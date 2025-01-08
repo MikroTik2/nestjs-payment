@@ -1,0 +1,1 @@
+export { MonoBankModule } from "./monobank.module";

@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from '@nestjs/config';
 import { LiqPayModule } from "@/liqpay";
+import { MonoBankModule } from "@/monobank";
 
 @Module({
     imports: [
@@ -8,7 +9,8 @@ import { LiqPayModule } from "@/liqpay";
             isGlobal: true,
         }),
         
-        LiqPayModule
+        MonoBankModule,
+        LiqPayModule,
     ],
 })
 export class AppModule {}

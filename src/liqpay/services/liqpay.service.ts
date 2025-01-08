@@ -19,11 +19,11 @@ export class LiqPayService {
         const params: IInvoiceParams = {
             action: "invoice_send",
             version: "3",
-            description: "Оформлення заказа",
+            description: "Оформление заказа",
             email: "dotsenk20034@gmail.com",
             currency: "UAH",
             amount: 2000,
-            order_id: "sssssssdfsdf2342342345hhjfghfghfhtfhth",
+            order_id: "ifjgos548g75g857t9gw85g5wkjhrgkw4ug",
             goods: [
                 {
                     amount: 1000,

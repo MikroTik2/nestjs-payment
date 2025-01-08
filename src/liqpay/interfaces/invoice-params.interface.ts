@@ -1,4 +1,9 @@
-import { IGoodItem } from "./good-item.interface";
+interface IGoodItem {
+    amount: number;
+    count: number;
+    unit: string;
+    name: string;
+};
 
 export interface IInvoiceParams {
     action: string;

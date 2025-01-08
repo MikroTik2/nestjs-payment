@@ -1,0 +1,1 @@
+export { MonoBankService } from './monobank.service';

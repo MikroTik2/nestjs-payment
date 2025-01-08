@@ -1,0 +1,1 @@
+export { MonoBankController } from './monobank.controller'
