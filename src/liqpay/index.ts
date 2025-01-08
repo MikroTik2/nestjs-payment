@@ -1,0 +1,1 @@
+export { LiqPayModule } from './liqpay.module';

@@ -1,0 +1,1 @@
+export { LiqPayService } from './liqpay.service'

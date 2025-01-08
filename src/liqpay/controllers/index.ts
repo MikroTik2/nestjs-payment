@@ -1,0 +1,1 @@
+export { LiqPayController } from './liqpay.controller'
