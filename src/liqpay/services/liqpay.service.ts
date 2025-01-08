@@ -1,24 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import * as LiqPay from "liqpayjs-sdk";
-
-export interface IGoodItem {
-    amount: number;
-    count: number;
-    unit: string;
-    name: string;
-};
-
-export interface IInvoiceParams {
-    action: string;
-    version: string;
-    description: string;
-    email: string;
-    currency: string;
-    amount: number;
-    order_id: string;
-    goods: IGoodItem[];
-};
+import { IInvoiceParams, IInvoiceResponse, IInvoiceErrorResponse } from "@/liqpay/interfaces";
 
 @Injectable()
 export class LiqPayService {
@@ -31,16 +14,16 @@ export class LiqPayService {
         );
     };
 
-    async invoice() {
+    async invoice(): Promise<IInvoiceResponse | IInvoiceErrorResponse> {
 
-        const params = {
+        const params: IInvoiceParams = {
             action: "invoice_send",
             version: "3",
             description: "Оформлення заказа",
             email: "dotsenk20034@gmail.com",
             currency: "UAH",
             amount: 2000,
-            order_id: "tbn789wsdfsdyy40w5t7yw84578wt",
+            order_id: "sssssssdfsdf2342342345hhjfghfghfhtfhth",
             goods: [
                 {
                     amount: 1000,
