@@ -9,15 +9,11 @@ import { IInvoiceResponse } from "@/monobank/interfaces";
 @Injectable()
 export class MonoBankService {
     private readonly logger = new Logger(MonoBankService.name);
-    private baseUrl = 'https://api.monobank.ua/api';
-    private _token;
 
     constructor(
         private readonly http: HttpService,
         private readonly config: ConfigService,
-    ) {
-        this._token = this.config.get<string>('TEST_PRIVATE_KEY_MONOBANK')
-    };
+    ) {};
 
     async invoice(): Promise<IInvoiceResponse> {
         const params: IInvoiceParams = {
@@ -50,12 +46,7 @@ export class MonoBankService {
             paymentType: "debit",
         };
 
-        const response = await this.http.post<IInvoiceResponse>(`${this.baseUrl}/merchant/invoice/create`, params, {
-            headers: {
-                "Content-Type": "application/json",
-                "X-Token": this._token,
-            },
-        }).pipe(
+        const response = await this.http.post<IInvoiceResponse>(`/merchant/invoice/create`, params).pipe(
             map((response) => response.data),
             catchError((error: AxiosError) => {
                 this.logger.error(error?.response?.data);
